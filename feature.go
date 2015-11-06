@@ -108,7 +108,7 @@ func parseCoordinate(c interface{}) (coord Coordinate, err error) {
 		}
 	}()
 	coordinate, ok := c.([]interface{})
-	if !ok || len(coordinate) != 2 {
+	if !ok || len(coordinate) > 3 {
 		err = errors.New(fmt.Sprintf("Error unmarshal %v to coordinates", c))
 		return
 	}
